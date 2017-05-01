@@ -1,5 +1,5 @@
 # KSP-NEAT
->>>>> Neuro-Evolution of Augmenting Topologies in Evolving a Return Launch Vehicle in KSP <<<<<
+##### Neuro-Evolution of Augmenting Topologies in Evolving a Return Launch Vehicle in KSP #####
 
 This program uses a genetic algorithm to evolve a neural network in order to land the first stage of a rocket at its original launch site in Kerbal Space Program.
 This program is based on the the final approach of the SpaceX Falcon 9 return mission and exhibits similar behaviour (convergent evolution). 
@@ -15,7 +15,7 @@ Organism fitness is calculated based on:
 - Remaining fuel
 
 
->>>>> Framework and Implementation <<<<<
+##### Framework and Implementation #####
 
 Optimizing artificial neural networks through genetic algorithms is an alternative to commonly used neural net optimization methods (e.g. backpropagation), particularly in the absence of labeled data. 
 Here, the custom coded NEAT_final_approach program uses the kRPC remote procedure calling server framework to communicate with KSP and the neat_python framework in order to generate and evolve populations of rockets with 
@@ -28,13 +28,13 @@ the config file has been met, the simulation will come to a halt and the fittest
 using neat_python's visualize module (WIP).
 
 
->>>>> Requirements <<<<<
+##### Requirements #####
 
 Python 3.6.1
 Kerbal Space Program 1.2.2
 
 
->>>>> Installation Instructions <<<<<
+##### Installation Instructions #####
 
 1. Download and install Kerbal Space Program version 1.2.2(x64). It can be purchased at:
 	https://kerbalspaceprogram.com/kspstore/
@@ -46,7 +46,7 @@ Kerbal Space Program 1.2.2
 7. Copy generation save state files from the "Checkpoints" folder to the "KSP_NEAT" folder to observe emergent behaviour of the organisms by means of the evolutionary selection process.
 
 
->>>>> Known Issues <<<<<
+##### Known Issues #####
 
 There is a memory leak in KSP upon loading saved game states, so after a couple of generations the game may become sluggish and eventually your computer will run out of memory.
 Accordingly, restart the game every so often, the program will resume the evolution precess from the last saved generation (default every 1 generation).
