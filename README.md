@@ -1,11 +1,7 @@
 # KSP-NEAT
 ##### Neuro-Evolution of Augmenting Topologies in Evolving a Return Launch Vehicle in KSP #####
 
-This program uses a genetic algorithm to evolve a neural network in order to land the first stage of a rocket at its original launch site in Kerbal Space Program.
-This program is based on the the final approach of the SpaceX Falcon 9 return mission and exhibits similar behaviour (convergent evolution). 
-The AI included has been trained over 100 generations encompassing +/- 2500 organisms that have been selected to reproduce based on their global fitness. An average of 25 organisms
-were evaluated for their respective fitness each generation. The 5 fittest organisms were selected to seed the next generation, and served as parents/templates for the remaining 
-20 organisms through cross-over and point mutations of their neural networks (i.e. adjusting weigths and adding/removing nodes and edges).
+This program uses a genetic algorithm to evolve a neural network in order to land the first stage of a rocket at its original launch site in Kerbal Space Program. This program is based on the the final approach of the SpaceX Falcon 9 return mission and exhibits similar behaviour (convergent evolution).  The AI included has been trained over 100 generations encompassing +/- 2500 organisms that have been selected to reproduce based on their global fitness. An average of 25 organisms were evaluated for their respective fitness each generation. The 5 fittest organisms were selected to seed the next generation, and served as parents/templates for the remaining 20 organisms through cross-over and point mutations of their neural networks (i.e. adjusting weigths and adding/removing nodes and edges).
 
 Organism fitness is calculated based on:
 - Integrity of the rocket
@@ -17,16 +13,7 @@ Organism fitness is calculated based on:
 
 ##### Framework and Implementation #####
 
-Optimizing artificial neural networks through genetic algorithms is an alternative to commonly used neural net optimization methods (e.g. backpropagation), particularly in the absence of labeled data. 
-Here, the custom coded NEAT_final_approach program uses the kRPC remote procedure calling server framework to communicate with KSP and the neat_python framework in order to generate and evolve populations of rockets with 
-artificial neural network genomes. Populations are defined in the main config file, which also specifies the mutation types and rates, as well as the input and output layer for the neural network genome. Upon generating a population,
-individual organisms(vessels) are loaded in the game environment and selected vessel/flight telemetry data is used as input for the organism's neural net. Signals from the output layer get processed and communicated back to KSP
-where they directly influence the organism's behaviour. As soon as an (positive or negative) end condition is triggered, the overall fitness of the organism is calculated based on its performance in the fitness landscape 
-(potentially involving multipliers/penalties). Subsequently the next organism is loaded for fitness evaluation. After the last organism of a generation has been evaluated, the fittest members of the population are copied to 
-a new generation, where they produce the rest of the populations neural networks through point and cross-over mutations. After the specified number of generations has been achieved or the maximum fitness criterium declared in 
-the config file has been met, the simulation will come to a halt and the fittest organism of the last generation will be declared winner and organism stats, fitness history and species history will be displayed 
-using neat_python's visualize module (WIP).
-
+Optimizing artificial neural networks through genetic algorithms is an alternative to commonly used neural net optimization methods (e.g. backpropagation), particularly in the absence of labeled data. Here, the custom coded NEAT_final_approach program uses the kRPC remote procedure calling server framework to communicate with KSP and the neat_python framework in order to generate and evolve populations of rockets with artificial neural network genomes. Populations are defined in the main config file, which also specifies the mutation types and rates, as well as the input and output layer for the neural network genome. Upon generating a population, individual organisms(vessels) are loaded in the game environment and selected vessel/flight telemetry data is used as input for the organism's neural net. Signals from the output layer get processed and communicated back to KSP where they directly influence the organism's behaviour. As soon as an (positive or negative) end condition is triggered, the overall fitness of the organism is calculated based on its performance in the fitness landscape  (potentially involving multipliers/penalties). Subsequently the next organism is loaded for fitness evaluation. After the last organism of a generation has been evaluated, the fittest members of the population are copied to a new generation, where they produce the rest of the populations neural networks through point and cross-over mutations. After the specified number of generations has been achieved or the maximum fitness criterium declared in  the config file has been met, the simulation will come to a halt and the fittest organism of the last generation will be declared winner and organism stats, fitness history and species history will be displayed using neat_python's visualize module (WIP).
 
 ##### Requirements #####
 
@@ -48,8 +35,7 @@ Kerbal Space Program 1.2.2
 
 ##### Known Issues #####
 
-There is a memory leak in KSP upon loading saved game states, so after a couple of generations the game may become sluggish and eventually your computer will run out of memory.
-Accordingly, restart the game every so often, the program will resume the evolution precess from the last saved generation (default every 1 generation).
+There is a memory leak in KSP upon loading saved game states, so after a couple of generations the game may become sluggish and eventually your computer will run out of memory. Accordingly, restart the game every so often, the program will resume the evolution precess from the last saved generation (default every 1 generation).
 
 
 Enjoy!
