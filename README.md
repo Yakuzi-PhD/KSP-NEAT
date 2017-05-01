@@ -37,7 +37,7 @@ Kerbal Space Program 1.2.2
 ##### Installation Instructions #####
 
 1. Download and install Kerbal Space Program version 1.2.2(x64). It can be purchased at:
-	https://kerbalspaceprogram.com/kspstore/
+	https://kerbalspaceprogram.com/kspstore/index.php?p=22
 2. Copy the contents of the "Put in KSP folder" in the root KSP_1.2.2 folder (this includes the kRPC mod by djungelorm, the KSP_NEAT folder, neat-python by CodeReclaimers and a KSP save game file).
 3. Run the game. At the startup screen press "Start Game", then "Resume Saved". Select and load "test".
 4. At the spacecenter screen, select the the "NEAT_Test_02BX" vessel on the launchpad and click "Fly".
